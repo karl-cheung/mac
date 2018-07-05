@@ -1,0 +1,23 @@
+{
+  "name": "mac",
+  "version": "1.0.0",
+  "description": "一个前端开发工程师的 mac 装机",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincheung/mac.git"
+  },
+  "keywords": [
+    "mac",
+    "front-end Web developer"
+  ],
+  "author": "Zhang Yu <zhangyu.vin@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vincheung/mac/issues"
+  },
+  "homepage": "https://github.com/vincheung/mac#readme"
+}
