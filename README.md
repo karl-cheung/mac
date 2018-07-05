@@ -4,6 +4,8 @@
 
 安装 ShadowsocksX-NG。
 
+下载 [ShadowsocksX-NG](https://github.com/vincheung/mac/blob/master/public/ShadowsocksX-NG.1.6.1.zip)
+
 ### 终端过墙
 
 ShadowsocksX-NG 打开 PAC 或者全局模式。
@@ -228,6 +230,26 @@ gitlab 项目
 $ git config user.name 'Zhang Yu'
 
 $ git config user.email 'kimv.zhang@*.com'
+```
+
+## 编辑器
+
+### Atom
+
+> 同步 Atom 的设置
+
+安装 sync-settings 并设置 Personal Access Token 与 Gist Id
+
+快捷键 shift + command + p 搜索命令并运行 sync-settings:backup
+
+> 你可能初次使用 Atom，可运行脚本文件快速安装我收藏的插件与主题
+
+下载 [apm.sh](https://github.com/vincheung/mac/blob/master/public/apm.sh)
+
+```
+$ chmod 777 apm.sh
+
+$ ./apm.sh
 ```
 
 ## 安装 nvm 与 node
