@@ -46,6 +46,3 @@ seti-ui \
 tree-view-finder \
 travis-ci-status \
 vim-mode \
-
-
-

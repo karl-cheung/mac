@@ -42,7 +42,11 @@ $ vim ~/.bash_profile
 ```
 # set color
 export CLICOLOR=1
-export LSCOLORS=Fxfxaxdxcxegedabagacad
+export LSCOLORS=Dxfxaxdxcxegedabagacad
+```
+
+```
+$ source ~/.bash_profile
 ```
 
 ## 安装 Homebrew
@@ -53,12 +57,30 @@ export LSCOLORS=Fxfxaxdxcxegedabagacad
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
+使用 brew cask
+
 ```
 $ brew tap phinze/homebrew-cask && brew install brew-cask
 ```
 
 ```
 $ brew cask install evernote filezilla youdaodict sublime-text snipaste qq
+```
+
+使用 brew
+
+```
+$ brew install gnupg gnupg2 mysql
+```
+
+> 如果你是 macOS High Sierra 用户，通过 brew 安装应用前你可能需要以下操作
+
+```
+$ sudo mkdir /usr/local/Cellar && sudo mkdir /usr/local/opt && sudo mkdir /usr/local/include && sudo mkdir /usr/local/Frameworks && sudo mkdir /usr/local/lib
+```
+
+```
+$ sudo chown -R $(whoami) $(brew --prefix)/*
 ```
 
 ## 允许从任何来源下载的应用
@@ -314,3 +336,42 @@ $ npm set init-license 'MIT'
 
 $ npm config list
 ```
+
+## 安装 rvm 与 ruby
+
+### rvm
+
+> 你可能需要先安装 GnuPG
+
+```
+$ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+```
+
+```
+$ \curl -sSL https://get.rvm.io | bash -s stable
+```
+
+```
+$ source /Users/vin/.rvm/scripts/rvm
+```
+
+### ruby
+
+```
+$ rvm list known
+```
+
+```
+$ rvm install 2.5.1
+```
+
+### 安装 jekyll
+
+```
+$ gem install jekyll
+
+```
+
+## License
+
+The [MIT License](https://github.com/vincheung/mac/blob/master/LICENSE).
