@@ -369,7 +369,6 @@ $ rvm install 2.5.1
 
 ```
 $ gem install jekyll
-
 ```
 
 ## License
