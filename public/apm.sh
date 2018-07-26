@@ -10,7 +10,6 @@ atom-material-ui \
 atom-ternjs \
 atom-beautify \
 autocomplete-modules \
-autocomplete-paths \
 atom-html-preview \
 atom-css-comb \
 atom-ternjs \

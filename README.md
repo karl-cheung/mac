@@ -42,7 +42,7 @@ $ vim ~/.bash_profile
 ```
 # set color
 export CLICOLOR=1
-export LSCOLORS=Dxfxaxdxcxegedabagacad
+export LSCOLORS=Exfxaxdxcxegedabagacad
 ```
 
 ```
@@ -260,9 +260,27 @@ $ git config user.email 'kimv.zhang@*.com'
 
 > 同步 Atom 的设置
 
-安装 sync-settings 并设置 Personal Access Token 与 Gist Id
+安装
 
-快捷键 shift + command + p 搜索命令并运行 sync-settings:backup
+```
+$ apm install sync-settings
+```
+
+设置
+
+Personal Access Token 与 Gist Id
+
+命令选项板
+
+shift + command + p
+
+备份
+
+sync-settings:backup
+
+恢复
+
+sync-settings:restore
 
 > 你可能初次使用 Atom，可运行脚本文件快速安装我收藏的插件与主题
 
