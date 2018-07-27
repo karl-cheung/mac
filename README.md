@@ -36,19 +36,18 @@ $ curl ip.gs
 ### 修改 hosts
 
 ```
-$ cd /etc
-
-$ sudo vim hosts
+$ cd /etc && sudo chmod 777 hosts && vim hosts
 ```
 
 添加
 
 ```
-13.250.177.223  github.com
-13.229.188.59   github.com
-52.74.223.119   github.com
+192.30.253.113  github.com
+207.97.227.243  github.com
 192.30.253.118  gist.github.com
 192.30.253.119  gist.github.com
+151.101.228.133 avatars0.githubusercontent.com
+151.101.76.133  avatars1.githubusercontent.com
 ```
 
 刷新 DNS
@@ -63,6 +62,10 @@ $ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
 $ nslookup github.com
 
 $ nslookup gist.github.com
+```
+
+```
+$ sudo chmod 444 hosts
 ```
 
 ## 设置终端文件列表颜色
