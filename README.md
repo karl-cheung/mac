@@ -33,6 +33,38 @@ $ source ~/.zshrc
 $ curl ip.gs
 ```
 
+### 修改 hosts
+
+```
+$ cd /etc
+
+$ sudo vim hosts
+```
+
+添加
+
+```
+13.250.177.223  github.com
+13.229.188.59   github.com
+52.74.223.119   github.com
+192.30.253.118  gist.github.com
+192.30.253.119  gist.github.com
+```
+
+刷新 DNS
+
+```
+$ sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
+```
+
+查询
+
+```
+$ nslookup github.com
+
+$ nslookup gist.github.com
+```
+
 ## 设置终端文件列表颜色
 
 ```
@@ -64,7 +96,7 @@ $ brew tap phinze/homebrew-cask && brew install brew-cask
 ```
 
 ```
-$ brew cask install alfred atom cheatsheet dingtalk evernote filezilla foxmail google-chrome neteasemusic qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code youdaodict youku
+$ brew cask install alfred atom cheatsheet dingtalk evernote filezilla foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code youdaodict youku
 ```
 
 使用 brew
@@ -353,6 +385,12 @@ $ npm set init-author-email 'zhangyu.vin@gmail.com'
 $ npm set init-license 'MIT'
 
 $ npm config list
+```
+
+使用 cnpm
+
+```
+$ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
 ## 安装 rvm 与 ruby
