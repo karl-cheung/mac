@@ -189,10 +189,10 @@ $ svnserve -d -r /Users/vin/Public/svn
 ```
 
 checkout
-> 将服务器中 code 仓库的代码 checkout 到本地 /Users/vin/svn 目录下，注意替换账户与密码。
+> 将服务器中 code 仓库的代码 checkout 到本地当前目录下。
 
 ```
-$ svn checkout svn://localhost/code --username=account --password=password /Users/vin/svn
+$ svn checkout svn://localhost/code
 ```
 
 全局忽略文件
@@ -428,6 +428,40 @@ $ rvm install 2.5.1
 
 ```
 $ gem install jekyll
+```
+
+## 安装 pyenv 与 python
+
+### pyenv
+
+```
+$ brew install pyenv
+```
+
+```
+$ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nfi' >> ~/.bash_profile
+```
+
+```
+$ source ~/.bash_profile
+```
+
+### python
+
+```
+$ pyenv install --list
+```
+
+```
+$ pyenv install 3.7.0
+```
+
+```
+$ pyenv global 3.7.0
+```
+
+```
+$ pyenv local 3.7.0
 ```
 
 ## License
