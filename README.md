@@ -4,7 +4,7 @@
 
 安装 ShadowsocksX-NG。
 
-下载 [ShadowsocksX-NG](https://github.com/vincheung/mac/blob/master/public/ShadowsocksX-NG.1.6.1.zip)
+下载 [ShadowsocksX-NG](https://github.com/vincheung/mac/blob/master/public/ShadowsocksX-NG.1.6.1.zip)。
 
 ### 终端过墙
 
@@ -68,6 +68,7 @@ $ nslookup gist.github.com
 $ sudo chmod 444 hosts
 ```
 
+
 ## 设置终端文件列表颜色
 
 ```
@@ -84,6 +85,7 @@ export LSCOLORS=Exfxaxdxcxegedabagacad
 $ source ~/.bash_profile
 ```
 
+
 ## 安装 Homebrew
 
 > 你可能需要先安装 Xcode
@@ -92,17 +94,7 @@ $ source ~/.bash_profile
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-使用 brew cask
-
-```
-$ brew tap phinze/homebrew-cask && brew install brew-cask
-```
-
-```
-$ brew cask install alfred atom cheatsheet dingtalk evernote filezilla foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code youdaodict youku
-```
-
-使用 brew
+### 使用 brew
 
 ```
 $ brew install gnupg gnupg2 nginx mysql
@@ -118,6 +110,30 @@ $ sudo mkdir /usr/local/Cellar && sudo mkdir /usr/local/opt && sudo mkdir /usr/l
 $ sudo chown -R $(whoami) $(brew --prefix)/*
 ```
 
+更新
+
+```
+$ brew upgrade
+```
+
+### 使用 brew cask
+
+```
+$ brew tap phinze/homebrew-cask && brew install brew-cask
+```
+
+```
+$ brew cask install alfred appcleaner atom cheatsheet dingtalk evernote filezilla foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code youdaodict youku
+```
+
+更新
+
+```
+$ brew tap buo/cask-upgrade
+$ brew cu -a
+```
+
+
 ## 允许从任何来源下载的应用
 
 显示
@@ -132,6 +148,7 @@ $ sudo spctl --master-disable
 $ sudo spctl --master-enable
 ```
 
+
 ## 隐藏的文件夹
 
 显示
@@ -145,6 +162,7 @@ $ defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
 ```
 $ defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
 ```
+
 
 ## svn
 
@@ -224,6 +242,7 @@ yarn-error.log*
 
 推荐安装 Cornerstone。
 
+
 ## git
 
 > 你可能需要执行 ```xcode-select --install```
@@ -289,6 +308,7 @@ $ git config user.name 'Zhang Yu'
 $ git config user.email 'kimv.zhang@*.com'
 ```
 
+
 ## 编辑器
 
 ### Atom
@@ -326,6 +346,7 @@ $ chmod 777 apm.sh
 
 $ ./apm.sh
 ```
+
 
 ## 安装 nvm 与 node
 
@@ -396,7 +417,8 @@ $ npm config list
 $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 ```
 
-## 安装 rvm 与 ruby
+
+## 安装 rvm、ruby 与 jekyll
 
 ### rvm
 
@@ -429,6 +451,7 @@ $ rvm install 2.5.1
 ```
 $ gem install jekyll
 ```
+
 
 ## 安装 pyenv 与 python
 
@@ -463,6 +486,55 @@ $ pyenv global 3.7.0
 ```
 $ pyenv local 3.7.0
 ```
+
+
+## 安装 Qt
+
+下载[Qt 5.9](http://download.qt.io/official_releases/qt/5.9/5.9.6/qt-opensource-mac-x64-5.9.6.dmg)。
+
+
+## 安装 Redis Desktop Manager
+
+### 官方文档的编译安装
+
+```
+$ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 rdm && cd ./rdm
+```
+
+1.Install XCode with Xcode build tools.
+
+2.Install Homebrew.
+
+3.Copy ```cd ./src && cp ./resources/Info.plist.sample ./resources/Info.plist```.
+
+4.Building RDM dependencies require i.a. openssl and cmake.Install them:```brew install openssl cmake```.
+
+5.Build RDM dependencies```./configure```.
+
+6.Install Qt 5.9. Add Qt Creator and under Qt 5.9.x add Qt Charts module.
+
+7.Open ./src/rdm.pro in Qt Creator.
+
+8.Run build.
+
+### 补充与拓展
+
+在 Run build 前你可能需要:
+
+1.rdm 目录下新建目录 build-rdm-redis-desktop-manager-Debug.
+
+2.```brew install qt5```.
+
+3.项目 -> Manage Kits -> Qt Versions -> 添加 -> Qt 5.11.1(5.11.1) /usr/local/Cellar/qt/5.11.1/bin/qmake -> 构建套件(Kit) -> rdm -> 编译器：C: Apple Clang(x86_64) C++: Apple Clang(x86_64) -> Qt版本: Qt 5.11.1(5.11.1)
+
+### 生成应用程序版本
+
+1.下载[crashreporter](https://github.com/vincheung/mac/blob/master/public/crashreporter)。文件放置 rdm/bin/osx/debug 目录下。
+
+2.编辑 rdm/src/rdm.pro 注释 ```debug: CONFIG-=app_bundle```。
+
+3.Run build 会在 rdm/bin/osx/debug 目录下得到应用程序版本 rdm 将其拖到 Applications。
+
 
 ## License
 
