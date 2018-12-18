@@ -99,7 +99,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 ### 使用 brew
 
 ```
-$ brew install gnupg gnupg2 nginx mysql
+$ brew install nginx mysql yarn gnupg gnupg2
 ```
 
 > 如果你是 macOS High Sierra 用户，通过 brew 安装应用前你可能需要以下操作。
@@ -123,6 +123,8 @@ $ brew upgrade
 ```
 $ brew tap phinze/homebrew-cask && brew install brew-cask
 ```
+
+> 安装过程可能会中止，app 从 Homebrew 下架。
 
 ```
 $ brew cask install alfred appcleaner atom cheatsheet dingtalk evernote foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code wechat youdaodict youku
@@ -267,7 +269,7 @@ $ cat ~/.ssh/id_rsa.pub
 ```
 $ ssh-keygen -t rsa -C 'kimv.zhang@51shaoxi.com'
 
-$ id_rsa_*.pub
+$ id_rsa_*
 
 $ cat ~/.ssh/id_rsa_*.pub
 ```
@@ -422,10 +424,14 @@ $ npm set init-license 'MIT'
 $ npm config list
 ```
 
-使用 cnpm
+使用 cnpm 与 tyarn
 
 ```
-$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+$ npm install -g cnpm
+```
+
+```
+$ yarn add tyarn
 ```
 
 
