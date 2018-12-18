@@ -4,9 +4,7 @@
 
 ## 科学上网
 
-安装 ShadowsocksX-NG。
-
-下载 [ShadowsocksX-NG]。
+安装 [ShadowsocksX-NG]。
 
 ### 终端过墙
 
@@ -92,7 +90,7 @@ $ source ~/.bash_profile
 
 ## 安装 Homebrew
 
-> 你可能需要先安装 Xcode
+> 你可能需要先安装 Xcode。
 
 ```
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -104,7 +102,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 $ brew install gnupg gnupg2 nginx mysql
 ```
 
-> 如果你是 macOS High Sierra 用户，通过 brew 安装应用前你可能需要以下操作
+> 如果你是 macOS High Sierra 用户，通过 brew 安装应用前你可能需要以下操作。
 
 ```
 $ sudo mkdir /usr/local/Cellar && sudo mkdir /usr/local/opt && sudo mkdir /usr/local/include && sudo mkdir /usr/local/Frameworks && sudo mkdir /usr/local/lib
@@ -127,7 +125,7 @@ $ brew tap phinze/homebrew-cask && brew install brew-cask
 ```
 
 ```
-$ brew cask install alfred appcleaner atom cheatsheet dingtalk evernote filezilla foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code wechat youdaodict youku
+$ brew cask install alfred appcleaner atom cheatsheet dingtalk evernote foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text teamviewer typora visual-studio-code wechat youdaodict youku
 ```
 
 更新
@@ -141,8 +139,9 @@ $ brew cu -a
 
 ## 推荐软件(非 brew cask 平台)
 
+```
 Cornerstone、Micrisift Office、RAR Extractor Lite、GIF Brewery 3、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat Premium
-
+```
 
 
 ## 允许从任何来源下载的应用
@@ -193,7 +192,7 @@ $ svnadmin create code
 $ cd code/conf && vim svnserve.conf
 ```
 
-取消下列配置项注释。
+取消下列配置项注释
 
 ```
 anon-access = read
@@ -232,7 +231,7 @@ $ svn checkout svn://localhost/code
 $ vim ~/.subversion/config
 ```
 
-取消 global-ignores 行注释并追加以下可选项。
+取消 global-ignores 行注释并追加以下可选项
 
 ```
 .DS_Store
@@ -255,7 +254,7 @@ yarn-error.log*
 
 ## git
 
-> 你可能需要执行 ```xcode-select --install```
+> 你可能需要执行 ```xcode-select --install```。
 
 新建密钥并添加到 github 与 gitlab
 
@@ -324,7 +323,7 @@ $ git config user.email 'kimv.zhang@*.com'
 
 ### Atom
 
-> 同步 Atom 的设置
+> 同步 Atom 的设置。
 
 安装
 
@@ -348,7 +347,7 @@ sync-settings:backup
 
 sync-settings:restore
 
-> 你可能初次使用 Atom，可运行脚本文件快速安装我收藏的插件与主题
+> 你可能初次使用 Atom，可运行脚本文件快速安装我收藏的插件与主题。
 
 下载 [apm.sh]。
 
@@ -435,7 +434,7 @@ $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 ### rvm
 
-> 你可能需要先安装 GnuPG。```$ brew install gnupg gnupg2```
+> 你可能需要先安装 GnuPG。```$ brew install gnupg gnupg2```。
 
 ```
 $ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
