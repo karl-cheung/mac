@@ -142,7 +142,7 @@ $ brew cu -a
 ## 推荐软件(非 brew cask 平台)
 
 ```
-Cornerstone、Micrisift Office、RAR Extractor Lite、GIF Brewery 3、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat Premium
+Cornerstone、Micrisift Office、RAR Extractor Lite、GIF Brewery 3、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat Premium、FileZilla、Sketch
 ```
 
 
@@ -212,6 +212,18 @@ $ vim passwd
 ```
 [users]
 account=password
+```
+
+设置权限
+
+```
+$ vim authz
+```
+
+```
+[groups]
+groups = account
+@group = rw
 ```
 
 启动 svn
@@ -431,7 +443,7 @@ $ npm install -g cnpm
 ```
 
 ```
-$ yarn add tyarn
+$ yarn global add tyarn
 ```
 
 
