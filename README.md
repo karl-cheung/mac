@@ -337,37 +337,7 @@ git config user.email 'enterprise-mailbox@*'
 > 插件列表。
 
 ```text
-Atom One Dark Theme
-Auto Import
-Bracket Pair Colorizer
-Chinese (Simplified) Language Pack for Visual Studio Code
-Code Runner
-Color Highlight
-CSS Peek
-Debugger for Chrome
-File Utils
-Git History
-Git History Diff
-Git Project Manager
-GitLens — Git supercharged
-Import Cost
-indent-rainbow
-IntelliSense for CSS class names in HTML
-lit-html
-markdownlint
-minapp
-npm Intellisense
-Prettier - Code formatter
-Quokka.js
-React Native Tools
-SVG Viewer
-Trailing Spaces
-TypeScript Hero
-Vetur
-Vetur-wepy
-vscode-pdf
-Snippetica for Markdown
-Live Server
+Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Pack for Visual Studio Code、Code Runner、Color Highlight、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、Import Cost、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、markdownlint、minapp、npm Intellisense、Prettier - Code formatter、Quokka.js、React Native Tools、SVG Viewer、Trailing Spaces、TypeScript Hero、Vetur、Vetur-wepy、vscode-pdf、Snippetica for Markdown、Live Server
 ```
 
 ### Atom
@@ -432,7 +402,9 @@ command -v nvm
 ```shell
 nvm ls-remote
 
-nvm install v8.11.3
+nvm install v8.16.0
+
+nvm install v10.15.3
 ```
 
 ### npm
