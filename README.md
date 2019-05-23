@@ -1,4 +1,4 @@
-# 一个前端开发工程师的 mac 装机
+# 一份前端开发工程的 mac 装机清单
 
 ## 科学上网
 
@@ -139,7 +139,7 @@ Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、Sakura、Core S
 ## 其他（非 brew cask 平台）
 
 ```text
-Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch
+Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch、Charles
 ```
 
 ## 允许从任何来源下载的应用
