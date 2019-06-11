@@ -5,16 +5,16 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vincheung/mac.git"
+    "url": "git+https://github.com/vincheung/Mac.git"
   },
   "keywords": [
-    "mac",
+    "Mac",
     "front-end Web developer"
   ],
   "author": "Zhang Yu <zhangyu.vin@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vincheung/mac/issues"
+    "url": "https://github.com/vincheung/Mac/issues"
   },
-  "homepage": "https://github.com/vincheung/mac#readme"
+  "homepage": "https://github.com/vincheung/Mac#readme"
 }
