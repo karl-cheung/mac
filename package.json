@@ -1,11 +1,8 @@
 {
   "name": "mac",
   "version": "1.0.0",
-  "description": "一个前端开发工程师的 mac 装机",
+  "description": "一份前端开发工程的装机清单 - Mac",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vincheung/mac.git"

@@ -1,4 +1,4 @@
-# 一份前端开发工程的 mac 装机清单
+# 一份前端开发工程的装机清单 - Mac
 
 ## 科学上网
 
@@ -31,7 +31,7 @@ curl ip.gs
 
 ### DNS
 
-> 如果不使用代理，你还可以使用 DNS 方案
+> 如果不使用代理，你还可以使用 DNS 方案。
 
 ```shell
 cd /etc && sudo chmod 777 hosts && vim hosts
@@ -309,7 +309,7 @@ yes
 > 如果不通过 ssh 连接，这是一个可选方案。
 
 ```shell
-git clone https://gitlab-ci-token:${Personal Access Tokens}@gitlab.com/username/myrepo.git
+git clone https://<username>:<private-token>@myrepo.git
 ```
 
 ### 默认设置
@@ -337,7 +337,8 @@ git config user.email 'enterprise-mailbox@*'
 > 插件列表。
 
 ```text
-Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Pack for Visual Studio Code、Code Runner、Color Highlight、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、Import Cost、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、markdownlint、minapp、npm Intellisense、Prettier - Code formatter、Quokka.js、React Native Tools、SVG Viewer、Trailing Spaces、TypeScript Hero、Vetur、Vetur-wepy、vscode-pdf、Snippetica for Markdown、Live Server
+Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Pack for Visual Studio Code、Code Runner、Color Highlight、Color Info
+、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、Import Cost、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、Snippetica for Markdown、Live Server
 ```
 
 ### Atom
@@ -402,9 +403,8 @@ command -v nvm
 ```shell
 nvm ls-remote
 
-nvm install v8.16.0
+nvm install vx.x.x
 
-nvm install v10.15.3
 ```
 
 ### npm
@@ -470,7 +470,7 @@ source /Users/vin/.rvm/scripts/rvm
 ```shell
 rvm list known
 
-rvm install 2.5.1
+rvm install x.x.x
 ```
 
 ### 安装 jekyll
@@ -496,11 +496,11 @@ source ~/.bash_profile
 ```shell
 pyenv install --list
 
-pyenv install 3.7.0
+pyenv install x.x.x
 
-pyenv global 3.7.0
+pyenv global x.x.x
 
-pyenv local 3.7.0
+pyenv local x.x.x
 ```
 
 ## 安装 Redis Desktop Manager
