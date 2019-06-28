@@ -4,6 +4,8 @@
 
 ### 代理
 
+> 你需要拥有自己的 shadowsocks 账号。
+
 安装 [ShadowsocksX-NG]。
 
 ### 终端过墙
@@ -31,7 +33,7 @@ curl ip.gs
 
 ### DNS
 
-> 如果不使用代理，你还可以使用 DNS 方案。
+> 如果不使用代理，你还可以使用 DNS 方案来访问墙外的一些域名。注意以下 IP 可能失效。
 
 ```shell
 cd /etc && sudo chmod 777 hosts && vim hosts
@@ -122,12 +124,20 @@ brew tap phinze/homebrew-cask && brew install brew-cask
 brew cask install alfred appcleaner atom baidunetdisk cheatsheet evernote dingtalk evernote foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
 ```
 
-更新
+> 你可以通过 homebrew-cask-upgrade 以获取交互式更新界面。
+
+安装
 
 ```shell
 brew tap buo/cask-upgrade
+```
 
+更新
+
+```shell
 brew cu -a
+
+yes
 ```
 
 ## 苹果商店
@@ -403,7 +413,7 @@ command -v nvm
 ```shell
 nvm ls-remote
 
-nvm install vx.x.x
+nvm install x.x.x
 
 ```
 
