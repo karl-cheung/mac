@@ -33,7 +33,9 @@ curl ip.gs
 
 ### DNS
 
-> 如果不使用代理，你还可以使用 DNS 方案来访问墙外的一些域名。注意以下 IP 可能失效。
+> 如果不使用代理，你还可以使用 DNS 方案来访问墙外的一些域名。注意以下 host 可能失效。
+
+#### 命令行
 
 ```shell
 cd /etc && sudo chmod 777 hosts && vim hosts
@@ -65,6 +67,10 @@ nslookup gist.github.com
 ```shell
 sudo chmod 444 hosts
 ```
+
+#### 交互式界面
+
+安装软件 switchhosts 以切换 host。
 
 ## 设置终端文件列表颜色
 
@@ -124,7 +130,7 @@ brew tap phinze/homebrew-cask && brew install brew-cask
 brew cask install alfred appcleaner atom baidunetdisk cheatsheet evernote dingtalk evernote foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
 ```
 
-> 你可以通过 homebrew-cask-upgrade 以获取交互式更新界面。
+> 你可以通过 homebrew-cask-upgrade 以获取交互式界面更新。
 
 安装
 
@@ -137,22 +143,26 @@ brew tap buo/cask-upgrade
 ```shell
 brew cu -a
 
-yes
+y
 ```
 
-## 苹果商店
+## App Store
 
 ```text
 Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、Sakura、Core Shell、iTunes、OhMyStar2、Xcode、Yummy FTP Pro
 ```
 
-## 其他（非 brew cask 平台）
+## 其他
+
+> 多数需要付费使用，抑或尝试使用破解版。（非 brew cask 平台）
 
 ```text
 Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch、Charles
 ```
 
 ## 允许从任何来源下载的应用
+
+> 在使用一些破解版软件时，你可能需要以下操作以启动软件时允许任何来源。
 
 显示
 
@@ -166,7 +176,7 @@ sudo spctl --master-disable
 sudo spctl --master-enable
 ```
 
-## 隐藏的文件夹
+## Finder 文件夹的显示与隐藏
 
 显示
 
@@ -557,7 +567,7 @@ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 r
 
 2. 编辑 rdm/src/rdm.pro 注释 ```debug: CONFIG-=app_bundle```。
 
-3. Run build 会在 rdm/bin/osx/debug 目录下得到应用程序版本 rdm 将其拖到 Applications。
+3. Run build 会在 rdm/bin/osx/debug 目录下得到应用程序版本 rdm 将其拖拽至 Applications。
 
 ## License
 
