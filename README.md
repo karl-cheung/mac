@@ -127,7 +127,7 @@ brew tap phinze/homebrew-cask && brew install brew-cask
 > 安装过程可能会中止，app 从 Homebrew 下架。
 
 ```shell
-brew cask install alfred appcleaner atom baidunetdisk cheatsheet evernote dingtalk evernote foxmail google-chrome neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
+brew cask install alfred appcleanerc baidunetdisk charles cheatsheet evernote dingtalk evernote foxmail google-chrome iterm2 neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
 ```
 
 > 你可以通过 homebrew-cask-upgrade 以获取交互式界面更新。
@@ -149,20 +149,20 @@ y
 ## App Store
 
 ```text
-Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、Sakura、Core Shell、iTunes、OhMyStar2、Xcode、Yummy FTP Pro
+Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、Sakura、Core Shell、iTunes、OhMyStar2、Xcode、Yummy FTP Pro、iCopy
 ```
 
 ## 其他
 
-> 多数需要付费使用，抑或尝试使用破解版。（非 brew cask 平台）
+> 多数需要付费使用。（非 brew cask 平台）
 
 ```text
-Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch、Charles
+Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch
 ```
 
 ## 允许从任何来源下载的应用
 
-> 在使用一些破解版软件时，你可能需要以下操作以启动软件时允许任何来源。
+> 在使用一些非正版软件时，你可能需要以下操作以启动软件时允许任何来源。
 
 显示
 
@@ -241,6 +241,7 @@ svnserve -d -r /Users/vin/Public/svn
 ```
 
 checkout
+
 > 将服务器中 code 仓库的代码 checkout 到本地当前目录下。
 
 ```shell
@@ -276,7 +277,7 @@ yarn-error.log*
 
 ### ssh
 
-> 你可能需要执行 ```xcode-select --install```。
+> 你可能需要执行 `xcode-select --install`。
 
 新建密钥并添加到 github 与 gitlab
 
@@ -357,8 +358,7 @@ git config user.email 'enterprise-mailbox@*'
 > 插件列表。
 
 ```text
-Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Pack for Visual Studio Code、Code Runner、Color Highlight、Color Info
-、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、Import Cost、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、Snippetica for Markdown、Live Server
+Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
 ```
 
 ### Atom
@@ -475,7 +475,7 @@ yarn global add tyarn
 
 ### rvm
 
-> 你可能需要先安装 GnuPG。```$ brew install gnupg gnupg2```。
+> 你可能需要先安装 GnuPG。`$ brew install gnupg gnupg2`。
 
 ```shell
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
@@ -535,11 +535,11 @@ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 r
 
 2. Install Homebrew.
 
-3. Copy ```cd ./src && cp ./resources/Info.plist.sample ./resources/Info.plist```.
+3. Copy `cd ./src && cp ./resources/Info.plist.sample ./resources/Info.plist`.
 
-4. Building RDM dependencies require i.a. openssl and cmake.Install them: ```brew install openssl cmake```.
+4. Building RDM dependencies require i.a. openssl and cmake.Install them: `brew install openssl cmake`.
 
-5. Build RDM dependencies ```./configure```.
+5. Build RDM dependencies `./configure`.
 
 6. Install Qt 5.9. Add Qt Creator and under Qt 5.9.x add Qt Charts module.
 
@@ -553,9 +553,9 @@ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 r
 
 1. rdm 目录下新建 build 目录 build-rdm-redis-desktop-manager-Debug.
 
-2. ```brew install qt5```.
+2. `brew install qt5`.
 
-3. 项目 -> Manage Kits -> Qt Versions -> 添加 -> Qt 5.11.1(5.11.1) /usr/local/Cellar/qt/5.11.1/bin/qmake -> 构建套件(Kit) -> rdm -> 编译器：C: Apple Clang(x86_64) C++: Apple Clang(x86_64) -> Qt版本: Qt 5.11.1(5.11.1)
+3. 项目 -> Manage Kits -> Qt Versions -> 添加 -> Qt 5.11.1(5.11.1) /usr/local/Cellar/qt/5.11.1/bin/qmake -> 构建套件(Kit) -> rdm -> 编译器：C: Apple Clang(x86_64) C++: Apple Clang(x86_64) -> Qt 版本: Qt 5.11.1(5.11.1)
 
 ### 安装 Qt
 
@@ -565,7 +565,7 @@ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 r
 
 1. 下载 [crashreporter]。文件放置 rdm/bin/osx/debug 目录下。
 
-2. 编辑 rdm/src/rdm.pro 注释 ```debug: CONFIG-=app_bundle```。
+2. 编辑 rdm/src/rdm.pro 注释 `debug: CONFIG-=app_bundle`。
 
 3. Run build 会在 rdm/bin/osx/debug 目录下得到应用程序版本 rdm 将其拖拽至 Applications。
 
@@ -573,12 +573,8 @@ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 r
 
 The [MIT License].
 
-[ShadowsocksX-NG]: ./public/ShadowsocksX-NG.1.6.1.zip
-
+[shadowsocksx-ng]: ./public/ShadowsocksX-NG.1.6.1.zip
 [apm.sh]: ./public/apm.sh
-
-[Qt 5.9]: http://download.qt.io/official_releases/qt/5.9/5.9.6/qt-opensource-mac-x64-5.9.6.dmg
-
+[qt 5.9]: http://download.qt.io/official_releases/qt/5.9/5.9.6/qt-opensource-mac-x64-5.9.6.dmg
 [crashreporter]: ./public/crashreporter
-
-[MIT License]: ./LICENSE
+[mit license]: ./LICENSE
