@@ -72,7 +72,19 @@ sudo chmod 444 hosts
 
 安装软件 switchhosts 以切换 host。
 
-## 设置终端文件列表颜色
+## 终端设置
+
+### power-shell 切换
+
+```shell
+# zsh
+chsh -s /bin/zsh
+
+#bash
+chsh -s /bin/bash
+```
+
+### 文件列表颜色
 
 ```shell
 vim ~/.bash_profile
@@ -127,7 +139,7 @@ brew tap phinze/homebrew-cask && brew install brew-cask
 > 安装过程可能会中止，app 从 Homebrew 下架。
 
 ```shell
-brew cask install alfred appcleanerc baidunetdisk charles cheatsheet evernote dingtalk evernote foxmail google-chrome iterm2 neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
+brew cask install alfred appcleanerc baidunetdisk charles cheatsheet dingtalk evernote foxmail google-chrome iterm2 neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
 ```
 
 > 你可以通过 homebrew-cask-upgrade 以获取交互式界面更新。
@@ -162,7 +174,7 @@ Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC�
 
 ## 允许从任何来源下载的应用
 
-> 在使用一些非正版软件时，你可能需要以下操作以启动软件时允许任何来源。
+> 在使用一些其他来源的应用程序时，你可能需要以下操作以启动软件时允许任何来源。
 
 显示
 
@@ -358,7 +370,7 @@ git config user.email 'enterprise-mailbox@*'
 > 插件列表。
 
 ```text
-Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
+Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、HTML CSS Support、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
 ```
 
 ### Atom
@@ -403,8 +415,11 @@ chmod 777 apm.sh
 
 ```shell
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+```
 
-vim ~/.bash_profile
+```shell
+# 根据不同的 shell 更改配置文件 .zshrc | .bash_profile | .profile
+vim ~/.zshrc
 ```
 
 ```text
@@ -413,7 +428,7 @@ export NVM_DIR="$HOME/.nvm"
 ```
 
 ```shell
-source ~/.bash_profile
+source ~/.zshrc
 
 command -v nvm
 ```
