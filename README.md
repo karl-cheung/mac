@@ -1,8 +1,30 @@
 # 一份前端开发工程的装机清单 - Mac
 
+## 目录
+
+- [科学上网](#科学上网)
+
+- [应用程序](#应用程序)
+
+- [编辑器](#编辑器)
+
+- [git](#git)
+
+- [svn](#svn)
+
+- [nvm、node](#nvm、node)
+
+- [rvm、ruby、jekyll](#rvm、ruby、jekyll)
+
+- [pyenv、python](#pyenv、python)
+
+- [Redis Desktop Manager]
+
+- [设备的一些预备操作](#设备的一些预备操作)
+
 ## 科学上网
 
-### 代理
+### SS 代理
 
 > 你需要拥有自己的 shadowsocks 账号。
 
@@ -10,30 +32,23 @@
 
 ### 终端过墙
 
-ShadowsocksX-NG 打开 PAC 或者全局模式。
+- ShadowsocksX-NG 打开 PAC 或者全局模式
 
-右击程序，Copy HTTP Proxy Shell Export Line。
+- 右击程序，Copy HTTP Proxy Shell Export Line
 
-或者复制：
-
-```shell
-export http_proxy=http://127.0.0.1:1087;
-export https_proxy=http://127.0.0.1:1087;
-```
-
-编辑 .zshrc 文件粘贴剪切板。
+- 编辑 .bash_profile 文件粘贴剪切板
 
 ```shell
-vim ~/.zshrc
+vim ~/.bash_profile
 
-source ~/.zshrc
+source ~/.bash_profile
 
 curl ip.gs
 ```
 
 ### DNS
 
-> 如果不使用代理，你还可以使用 DNS 方案来访问墙外的一些域名。注意以下 host 可能失效。
+> 如果不使用 SS 代理，你还可以使用 DNS 方案来访问墙外一些域名。注意以下 hosts 可能失效。
 
 #### 命令行
 
@@ -41,76 +56,83 @@ curl ip.gs
 cd /etc && sudo chmod 777 hosts && vim hosts
 ```
 
-添加
-
 ```shell
+# 添加
+
 192.30.253.118  gist.github.com
 192.30.253.119  gist.github.com
 151.101.228.133 avatars0.githubusercontent.com
 151.101.76.133  avatars1.githubusercontent.com
 ```
 
-刷新 DNS
-
 ```shell
+# 刷新 DNS
+
 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
 ```
 
-查询
-
 ```shell
+# 查询
+
 nslookup gist.github.com
 ```
 
-恢复
-
 ```shell
+# 恢复文件权限
+
 sudo chmod 444 hosts
 ```
 
 #### 交互式界面
 
-安装软件 switchhosts 以切换 host。
+安装软件 switchhosts 以切换 hosts。
 
-## 终端设置
+## shell
 
-### power-shell 切换
+### zsh 与 bash 切换
 
 ```shell
 # zsh
+
 chsh -s /bin/zsh
 
-#bash
+# bash
+
 chsh -s /bin/bash
 ```
 
 ### 文件列表颜色
 
+> 写入文件取决于使用哪种 shell
+
 ```shell
-vim ~/.bash_profile
+vim ~/.zshrc
 ```
 
 ```shell
 # set color
+
 export CLICOLOR=1
 export LSCOLORS=Exfxaxdxcxegedabagacad
 ```
 
 ```shell
-source ~/.bash_profile
+source ~/.zshrc
 ```
 
-## 安装 Homebrew
+## 应用程序
+
+### Homebrew
 
 > 你可能需要先安装 Xcode。
 
 ```shell
+# 安装
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-### 使用 brew
-
 ```shell
+# 使用
 brew install nginx mysql yarn gnupg gnupg2
 ```
 
@@ -118,15 +140,12 @@ brew install nginx mysql yarn gnupg gnupg2
 
 ```shell
 sudo mkdir /usr/local/Cellar && sudo mkdir /usr/local/opt && sudo mkdir /usr/local/include && sudo mkdir /usr/local/Frameworks && sudo mkdir /usr/local/lib
-```
-
-```shell
 sudo chown -R $(whoami) $(brew --prefix)/*
 ```
 
-更新
-
 ```shell
+# 更新
+
 brew upgrade
 ```
 
@@ -139,32 +158,31 @@ brew tap phinze/homebrew-cask && brew install brew-cask
 > 安装过程可能会中止，app 从 Homebrew 下架。
 
 ```shell
-brew cask install alfred appcleanerc baidunetdisk charles cheatsheet dingtalk evernote foxmail google-chrome iterm2 neteasemusic postman qiyimedia qq qqlive snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaodict youku
+brew cask install alfred baidunetdisk charles cheatsheet dingtalk foxmail google-chrome iterm2 neteasemusic postman qq snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaonote
 ```
 
 > 你可以通过 homebrew-cask-upgrade 以获取交互式界面更新。
 
-安装
-
 ```shell
+# 安装
+
 brew tap buo/cask-upgrade
 ```
 
-更新
-
 ```shell
-brew cu -a
+# 更新
 
+brew cu -a
 y
 ```
 
-## App Store
+### App Store
 
 ```text
-Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、Sakura、Core Shell、iTunes、OhMyStar2、Xcode、Yummy FTP Pro、iCopy
+Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、OhMyStar2、Yummy FTP Pro、iCopy、Xcode
 ```
 
-## 其他
+### 其他
 
 > 多数需要付费使用。（非 brew cask 平台）
 
@@ -174,115 +192,64 @@ Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC�
 
 ## 允许从任何来源下载的应用
 
-> 在使用一些其他来源的应用程序时，你可能需要以下操作以启动软件时允许任何来源。
-
-显示
+> 在使用一些其他来源的应用程序时，你可能需要以下操作显示任何来源以启动软件。
 
 ```shell
+# 显示
+
 sudo spctl --master-disable
 ```
 
-隐藏
-
 ```shell
+# 隐藏
+
 sudo spctl --master-enable
 ```
 
-## Finder 文件夹的显示与隐藏
+## 编辑器
 
-显示
+### Visual Studio Code
 
-```shell
-defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
-```
-
-隐藏
-
-```shell
-defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
-```
-
-## svn
-
-### svn 命令行
-
-```shell
-mkdir /Users/vin/Public/svn && cd /Users/vin/Public/svn
-
-svnadmin create code
-
-cd code/conf && vim svnserve.conf
-```
-
-取消下列配置项注释
+> 插件列表。
 
 ```text
-anon-access = read
-auth-access = write
-password-db = passwd
-authz-db = authz
+Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、HTML CSS Support、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
 ```
 
-添加账户与密码
+### Atom
+
+> 同步 Atom 的设置。
+
+- 安装
 
 ```shell
-vim passwd
+apm install sync-settings
 ```
 
-```text
-[users]
-account=password
-```
+- 设置
 
-设置权限
+Personal Access Token 与 Gist Id
+
+- 命令选项板
+
+shift + command + p
+
+- 备份
+
+sync-settings:backup
+
+- 恢复
+
+sync-settings:restore
+
+> 你可能初次使用 Atom，可运行脚本文件快速安装相应插件与主题。
+
+下载 [apm.sh]。
 
 ```shell
-vim authz
-```
+chmod 777 apm.sh
 
-```text
-[groups]
-groups = account
-@group = rw
-```
-
-启动 svn
-
-```shell
-svnserve -d -r /Users/vin/Public/svn
-```
-
-checkout
-
-> 将服务器中 code 仓库的代码 checkout 到本地当前目录下。
-
-```shell
-svn checkout svn://localhost/code
-```
-
-全局忽略文件
-
-```shell
-vim ~/.subversion/config
-```
-
-取消 global-ignores 行注释并追加以下可选项
-
-```text
-.DS_Store
-node_modules
-dist
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Editor directories and files
-.idea
-.vscode
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+./apm.sh
 ```
 
 ## git
@@ -291,7 +258,7 @@ yarn-error.log*
 
 > 你可能需要执行 `xcode-select --install`。
 
-新建密钥并添加到 github 与 gitlab
+#### github 与 gitlab 共同生效
 
 ```shell
 ssh-keygen -t rsa -C 'zhangyu.vin@gmail.com'
@@ -347,69 +314,106 @@ git clone https://<username>:<private-token>@myrepo.git
 
 ### 默认设置
 
-github 项目
-
 ```shell
+# 全局配置
+
 git config --global user.name 'Zhang Yu'
 
 git config --global user.email 'zhangyu.vin@gmail.com'
 ```
 
-gitlab 项目
-
 ```shell
+# 局部配置
+
 git config user.name 'Zhang Yu'
 
 git config user.email 'enterprise-mailbox@*'
 ```
 
-## 编辑器
+## svn
 
-### Visual Studio Code
+### svn 命令行
 
-> 插件列表。
+```shell
+mkdir /Users/vin/Public/svn && cd /Users/vin/Public/svn
+
+svnadmin create code
+
+cd code/conf && vim svnserve.conf
+```
+
+- 取消下列配置项注释
 
 ```text
-Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、HTML CSS Support、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
+anon-access = read
+auth-access = write
+password-db = passwd
+authz-db = authz
 ```
 
-### Atom
-
-> 同步 Atom 的设置。
-
-安装
+- 添加账户与密码
 
 ```shell
-apm install sync-settings
+vim passwd
 ```
 
-设置
+```text
+[users]
+account=password
+```
 
-Personal Access Token 与 Gist Id
-
-命令选项板
-
-shift + command + p
-
-备份
-
-sync-settings:backup
-
-恢复
-
-sync-settings:restore
-
-> 你可能初次使用 Atom，可运行脚本文件快速安装相应插件与主题。
-
-下载 [apm.sh]。
+- 设置权限
 
 ```shell
-chmod 777 apm.sh
-
-./apm.sh
+vim authz
 ```
 
-## nvm 与 node 安装
+```text
+[groups]
+groups = account
+@group = rw
+```
+
+- 启动
+
+```shell
+svnserve -d -r /Users/vin/Public/svn
+```
+
+- checkout
+
+> 将服务器中 code 仓库的代码 checkout 到本地当前目录下。
+
+```shell
+svn checkout svn://localhost/code
+```
+
+- 全局忽略文件
+
+```shell
+vim ~/.subversion/config
+```
+
+- 取消 global-ignores 行注释并追加以下可选项
+
+```text
+.DS_Store
+node_modules
+dist
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+```
+
+## nvm、node
 
 ### nvm
 
@@ -418,7 +422,6 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ```
 
 ```shell
-# 根据不同的 shell 更改配置文件 .zshrc | .bash_profile | .profile
 vim ~/.zshrc
 ```
 
@@ -444,9 +447,9 @@ nvm install x.x.x
 
 ### npm
 
-npm 登录
-
 ```shell
+# npm 登录
+
 npm login
 
 vincheung
@@ -458,9 +461,9 @@ zhangyu.vin@gmail.com
 npm whoami
 ```
 
-npm 配置
-
 ```shell
+# npm 配置
+
 npm set init-author-name 'Zhang Yu'
 
 npm set init-author-email 'zhangyu.vin@gmail.com'
@@ -470,23 +473,22 @@ npm set init-license 'MIT'
 npm config list
 ```
 
-使用 nrm 管理源
-
 ```shell
+# 使用 nrm 管理源
 npm install -g nrm
 
 nrm ls
 ```
 
-使用 cnpm 与 tyarn
-
 ```shell
+# 使用 cnpm 与 tyarn
+
 npm install -g cnpm
 
 yarn global add tyarn
 ```
 
-## rvm、ruby 与 jekyll 安装
+## rvm、ruby、jekyll
 
 ### rvm
 
@@ -510,11 +512,13 @@ rvm install x.x.x
 
 ### jekyll 安装
 
+> 使用 jekyll 来生成你的静态博客。
+
 ```shell
 gem install jekyll
 ```
 
-## pyenv 与 python 安装
+## pyenv、python
 
 ### pyenv
 
@@ -538,7 +542,29 @@ pyenv global x.x.x
 pyenv local x.x.x
 ```
 
-## [Redis Desktop Manager 安装]
+## [Redis Desktop Manager]
+
+## 设备的一些预备操作
+
+### Finder 隐藏属性的文件夹的显示与隐藏
+
+```shell
+# 显示
+
+defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
+```
+
+```shell
+# 隐藏
+
+defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
+```
+
+### Charles 激活
+
+Registered Name: `https://zhile.io`
+
+License Key: `48891cf209c6d32bf4`
 
 ## License
 
@@ -547,5 +573,5 @@ The [MIT License].
 [shadowsocksx-ng]: ./public/ShadowsocksX-NG.1.6.1.zip
 [apm.sh]: ./public/apm.sh
 [qt 5.9]: http://download.qt.io/official_releases/qt/5.9/5.9.6/qt-opensource-mac-x64-5.9.6.dmg
-[redis desktop manager 安装]: ./doc/RedisDesktopManager.md
+[redis desktop manager]: ./doc/RedisDesktopManager.md
 [mit license]: ./LICENSE
