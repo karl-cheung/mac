@@ -12,15 +12,15 @@
 
 - [svn](#svn)
 
-- [nvm、node](#nvm、node)
+- [nvm node npm](#nvm-node-npm)
 
-- [rvm、ruby、jekyll](#rvm、ruby、jekyll)
+- [rvm ruby jekyll](#rvm-ruby-jekyll)
 
-- [pyenv、python](#pyenv、python)
-
-- [Redis Desktop Manager]
+- [pyenv python](#pyenv-python)
 
 - [设备的一些预备操作](#设备的一些预备操作)
+
+- [Redis Desktop Manager]
 
 ## 科学上网
 
@@ -413,7 +413,7 @@ yarn-error.log*
 *.sln
 ```
 
-## nvm、node
+## nvm node npm
 
 ### nvm
 
@@ -488,7 +488,37 @@ npm install -g cnpm
 yarn global add tyarn
 ```
 
-## rvm、ruby、jekyll
+```shell
+# 一些全局模块
+
+npm install -g @vue/cli rollup
+```
+
+```shell
+# @vue/cli
+
+vue create my-app
+```
+
+```shell
+# create-react-app
+
+npx create-react-app my-app
+```
+
+```shell
+# ant-design-pro
+
+yarn create umi  # or npm create um
+
+# Choose ant-design-pro
+
+npm install
+
+npm start
+```
+
+## rvm ruby jekyll
 
 ### rvm
 
@@ -518,7 +548,7 @@ rvm install x.x.x
 gem install jekyll
 ```
 
-## pyenv、python
+## pyenv python
 
 ### pyenv
 
@@ -542,8 +572,6 @@ pyenv global x.x.x
 pyenv local x.x.x
 ```
 
-## [Redis Desktop Manager]
-
 ## 设备的一些预备操作
 
 ### Finder 隐藏属性的文件夹的显示与隐藏
@@ -565,6 +593,8 @@ defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
 Registered Name: `https://zhile.io`
 
 License Key: `48891cf209c6d32bf4`
+
+## [Redis Desktop Manager]
 
 ## License
 
