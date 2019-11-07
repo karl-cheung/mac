@@ -210,15 +210,39 @@ sudo spctl --master-enable
 
 ### Visual Studio Code
 
-> 插件列表。
+#### 插件列表
 
 ```text
 Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、HTML CSS Support、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
 ```
 
+#### 配置
+
+```json
+# settings.json
+
+{
+  "files.associations": {
+    "*.wpy": "vue",
+    "*.wxml": "html",
+    "*.wxs": "javascript",
+    "*.vue": "vue",
+    "*.wxss": "css",
+    "*.cjson": "jsonc"
+  },
+  "emmet.includeLanguages": {
+    "wxml": "html"
+  },
+  "minapp-vscode.disableAutoConfig": true,
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.formatOnSave": true,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+}
+```
+
 ### Atom
 
-> 同步 Atom 的设置。
+#### 配置同步
 
 - 安装
 
@@ -443,6 +467,12 @@ nvm ls-remote
 
 nvm install x.x.x
 
+```
+
+```shell
+# 设置默认版本
+
+nvm alias default x.x.x
 ```
 
 ### npm
