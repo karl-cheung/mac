@@ -2,7 +2,7 @@
 
 ## 目录
 
-- [科学上网](#科学上网)
+- [shell](#shell)
 
 - [应用程序](#应用程序)
 
@@ -18,74 +18,7 @@
 
 - [pyenv python](#pyenv-python)
 
-- [设备的一些预备操作](#设备的一些预备操作)
-
 - [Redis Desktop Manager]
-
-## 科学上网
-
-### SS 代理
-
-> 你需要拥有自己的 shadowsocks 账号。
-
-安装 [ShadowsocksX-NG]。
-
-### 终端过墙
-
-- ShadowsocksX-NG 打开 PAC 或者全局模式
-
-- 右击程序，Copy HTTP Proxy Shell Export Line
-
-- 编辑 .bash_profile 文件粘贴剪切板
-
-```shell
-vim ~/.bash_profile
-
-source ~/.bash_profile
-
-curl ip.gs
-```
-
-### DNS
-
-> 如果不使用 SS 代理，你还可以使用 DNS 方案来访问墙外一些域名。注意以下 hosts 可能失效。
-
-#### 命令行
-
-```shell
-cd /etc && sudo chmod 777 hosts && vim hosts
-```
-
-```shell
-# 添加
-
-192.30.253.118  gist.github.com
-192.30.253.119  gist.github.com
-151.101.228.133 avatars0.githubusercontent.com
-151.101.76.133  avatars1.githubusercontent.com
-```
-
-```shell
-# 刷新 DNS
-
-sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder;
-```
-
-```shell
-# 查询
-
-nslookup gist.github.com
-```
-
-```shell
-# 恢复文件权限
-
-sudo chmod 444 hosts
-```
-
-#### 交互式界面
-
-安装软件 switchhosts 以切换 hosts。
 
 ## shell
 
@@ -93,11 +26,9 @@ sudo chmod 444 hosts
 
 ```shell
 # zsh
-
 chsh -s /bin/zsh
 
 # bash
-
 chsh -s /bin/bash
 ```
 
@@ -107,17 +38,50 @@ chsh -s /bin/bash
 
 ```shell
 vim ~/.zshrc
-```
 
-```shell
-# set color
-
+# text
 export CLICOLOR=1
 export LSCOLORS=Exfxaxdxcxegedabagacad
+
+source ~/.zshrc
 ```
 
+### 允许从任何来源下载的应用
+
+> 在使用一些其他来源的应用程序时，你可能需要以下操作显示任何来源以启动软件。
+
 ```shell
-source ~/.zshrc
+# 显示
+sudo spctl --master-disable
+
+# 隐藏
+sudo spctl --master-enable
+```
+
+### Finder 隐藏属性的文件夹的显示与隐藏
+
+```shell
+# 显示
+defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
+
+# 隐藏
+defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
+```
+
+### 修改文件权限
+
+```shell
+# 权限 777
+sudo chmod 777 file
+
+# 权限 444
+sudo chmod 444 file
+```
+
+### 查看本机 ip 信息
+
+```shell
+curl cip.cc
 ```
 
 ## 应用程序
@@ -132,8 +96,17 @@ source ~/.zshrc
 ```
 
 ```shell
-# 使用
+# 安装
 brew install nginx mysql yarn gnupg gnupg2
+```
+
+```shell
+# 安装
+brew install alfred baidunetdisk charles cheatsheet dingtalk foxmail google-chrome iterm2 neteasemusic postman qq snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaonote
+
+# 更新
+brew cu -a
+y
 ```
 
 > 如果你是 macOS High Sierra 用户，通过 brew 安装应用前你可能需要以下操作。
@@ -143,67 +116,14 @@ sudo mkdir /usr/local/Cellar && sudo mkdir /usr/local/opt && sudo mkdir /usr/loc
 sudo chown -R $(whoami) $(brew --prefix)/*
 ```
 
-```shell
-# 更新
-
-brew upgrade
-```
-
-### 使用 brew cask
-
-```shell
-brew tap phinze/homebrew-cask && brew install brew-cask
-```
-
-> 安装过程可能会中止，app 从 Homebrew 下架。
-
-```shell
-brew cask install alfred baidunetdisk charles cheatsheet dingtalk foxmail google-chrome iterm2 neteasemusic postman qq snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaonote
-```
-
-> 你可以通过 homebrew-cask-upgrade 以获取交互式界面更新。
-
-```shell
-# 安装
-
-brew tap buo/cask-upgrade
-```
-
-```shell
-# 更新
-
-brew cu -a
-y
-```
-
-### App Store
+### 一些推荐的 App Store
 
 ```text
+# 免费
 Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、OhMyStar2、Yummy FTP Pro、iCopy、Xcode
-```
 
-### 其他
-
-> 多数需要付费使用。（非 brew cask 平台）
-
-```text
+# 付费
 Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch
-```
-
-## 允许从任何来源下载的应用
-
-> 在使用一些其他来源的应用程序时，你可能需要以下操作显示任何来源以启动软件。
-
-```shell
-# 显示
-
-sudo spctl --master-disable
-```
-
-```shell
-# 隐藏
-
-sudo spctl --master-enable
 ```
 
 ## 编辑器
@@ -240,42 +160,6 @@ Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified
 }
 ```
 
-### Atom
-
-#### 配置同步
-
-- 安装
-
-```shell
-apm install sync-settings
-```
-
-- 设置
-
-Personal Access Token 与 Gist Id
-
-- 命令选项板
-
-shift + command + p
-
-- 备份
-
-sync-settings:backup
-
-- 恢复
-
-sync-settings:restore
-
-> 你可能初次使用 Atom，可运行脚本文件快速安装相应插件与主题。
-
-下载 [apm.sh]。
-
-```shell
-chmod 777 apm.sh
-
-./apm.sh
-```
-
 ## git
 
 ### ssh
@@ -285,13 +169,13 @@ chmod 777 apm.sh
 #### github 与 gitlab 共同生效
 
 ```shell
-ssh-keygen -t rsa -C 'zhangyu.vin@gmail.com'
+ssh-keygen -t rsa -C 'you@example.com'
 
 cat ~/.ssh/id_rsa.pub
 ```
 
 ```shell
-ssh-keygen -t rsa -C 'enterprise-mailbox@*'
+ssh-keygen -t rsa -C 'you@example.com'
 
 id_rsa_*
 
@@ -320,9 +204,7 @@ vim ~/.ssh/config
 ssh -T git@github.com
 
 yes
-```
 
-```shell
 ssh -T git@gitlab.*.com
 
 yes
@@ -341,17 +223,15 @@ git clone https://<username>:<private-token>@myrepo.git
 ```shell
 # 全局配置
 
-git config --global user.name 'Zhang Yu'
+git config --global user.name 'Your Name'
 
-git config --global user.email 'zhangyu.vin@gmail.com'
-```
+git config --global user.email 'you@example.com'
 
-```shell
 # 局部配置
 
-git config user.name 'Zhang Yu'
+git config user.name 'Your Name'
 
-git config user.email 'enterprise-mailbox@*'
+git config user.email 'you@example.com'
 ```
 
 ## svn
@@ -359,7 +239,7 @@ git config user.email 'enterprise-mailbox@*'
 ### svn 命令行
 
 ```shell
-mkdir /Users/vin/Public/svn && cd /Users/vin/Public/svn
+mkdir /Users/username/Public/svn && cd /Users/username/Public/svn
 
 svnadmin create code
 
@@ -401,7 +281,7 @@ groups = account
 - 启动
 
 ```shell
-svnserve -d -r /Users/vin/Public/svn
+svnserve -d -r /Users/username/Public/svn
 ```
 
 - checkout
@@ -445,28 +325,12 @@ yarn-error.log*
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
-```shell
-vim ~/.zshrc
-```
-
-```text
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-```
-
-```shell
-source ~/.zshrc
-
-command -v nvm
-```
-
 ### node
 
 ```shell
 nvm ls-remote
 
 nvm install x.x.x
-
 ```
 
 ```shell
@@ -482,11 +346,11 @@ nvm alias default x.x.x
 
 npm login
 
-vincheung
+username
 
 ******
 
-zhangyu.vin@gmail.com
+you@example.com
 
 npm whoami
 ```
@@ -494,9 +358,9 @@ npm whoami
 ```shell
 # npm 配置
 
-npm set init-author-name 'Zhang Yu'
+npm set init-author-name 'author name'
 
-npm set init-author-email 'zhangyu.vin@gmail.com'
+npm set init-author-email 'you@example.com'
 
 npm set init-license 'MIT'
 
@@ -505,6 +369,7 @@ npm config list
 
 ```shell
 # 使用 nrm 管理源
+
 npm install -g nrm
 
 nrm ls
@@ -559,7 +424,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 
 \curl -sSL https://get.rvm.io | bash -s stable
 
-source /Users/vin/.rvm/scripts/rvm
+source /Users/username/.rvm/scripts/rvm
 ```
 
 ### ruby
@@ -602,36 +467,11 @@ pyenv global x.x.x
 pyenv local x.x.x
 ```
 
-## 设备的一些预备操作
-
-### Finder 隐藏属性的文件夹的显示与隐藏
-
-```shell
-# 显示
-
-defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
-```
-
-```shell
-# 隐藏
-
-defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
-```
-
-### Charles 激活
-
-Registered Name: `https://zhile.io`
-
-License Key: `48891cf209c6d32bf4`
-
 ## [Redis Desktop Manager]
 
 ## License
 
 The [MIT License].
 
-[shadowsocksx-ng]: ./public/ShadowsocksX-NG.1.6.1.zip
-[apm.sh]: ./public/apm.sh
-[qt 5.9]: http://download.qt.io/official_releases/qt/5.9/5.9.6/qt-opensource-mac-x64-5.9.6.dmg
 [redis desktop manager]: ./doc/RedisDesktopManager.md
 [mit license]: ./LICENSE

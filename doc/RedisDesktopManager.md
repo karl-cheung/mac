@@ -42,4 +42,5 @@ git clone --recursive https://github.com/uglide/RedisDesktopManager.git -b 0.9 r
 
 3. Run build 会在 rdm/bin/osx/debug 目录下得到应用程序版本 rdm 将其拖拽至 Applications。
 
+[qt 5.9]: http://download.qt.io/official_releases/qt/5.9/5.9.6/qt-opensource-mac-x64-5.9.6.dmg
 [crashreporter]: ../public/crashreporter
