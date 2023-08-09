@@ -3,110 +3,122 @@
 ## 目录
 
 - [shell](#shell)
-
+&emsp;
 - [应用程序](#应用程序)
-
+&emsp;
 - [编辑器](#编辑器)
-
+&emsp;
 - [git](#git)
-
+&emsp;
 - [svn](#svn)
-
+&emsp;
 - [nvm node npm](#nvm-node-npm)
-
+&emsp;
 - [rvm ruby jekyll](#rvm-ruby-jekyll)
-
+&emsp;
 - [pyenv python](#pyenv-python)
-
+&emsp;
 - [Redis Desktop Manager]
 
-## shell
+### shell
 
-### zsh 与 bash 切换
+#### zsh 与 bash 切换
+
+##### zsh
 
 ```shell
-# zsh
 chsh -s /bin/zsh
+```
 
-# bash
+##### bash
+
+```shell
 chsh -s /bin/bash
 ```
 
-### 文件列表颜色
+#### 文件列表颜色
 
 > 写入文件取决于使用哪种 shell
 
 ```shell
 vim ~/.zshrc
+```
 
-# text
+```
 export CLICOLOR=1
 export LSCOLORS=Exfxaxdxcxegedabagacad
+```
 
+```shell
 source ~/.zshrc
 ```
 
-### 允许从任何来源下载的应用
+#### 允许从任何来源下载的应用
 
 > 在使用一些其他来源的应用程序时，你可能需要以下操作显示任何来源以启动软件。
 
-```shell
-# 显示
-sudo spctl --master-disable
+##### 显示
 
-# 隐藏
+```shell
+sudo spctl --master-disable
+```
+
+##### 隐藏
+
+```shell
 sudo spctl --master-enable
 ```
 
-### Finder 隐藏属性的文件夹的显示与隐藏
+#### Finder 隐藏属性的文件夹的显示与隐藏
+
+##### 显示
 
 ```shell
-# 显示
 defaults write com.apple.finder AppleShowAllFiles -bool true; killall Finder
+```
 
-# 隐藏
+##### 隐藏
+
+```shell
 defaults write com.apple.finder AppleShowAllFiles -bool false; killall Finder
 ```
 
-### 修改文件权限
+#### 修改文件权限
+
+##### 权限 777
 
 ```shell
-# 权限 777
 sudo chmod 777 file
+```
 
-# 权限 444
+##### 权限 444
+
+```shell
 sudo chmod 444 file
 ```
 
-### 查看本机 ip 信息
+#### 查看本机 ip 信息
 
 ```shell
 curl cip.cc
 ```
 
-## 应用程序
+### 应用程序
 
-### Homebrew
+#### Homebrew
 
 > 你可能需要先安装 Xcode。
 
 ```shell
-# 安装
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
 ```shell
-# 安装
 brew install nginx mysql yarn gnupg gnupg2
 ```
 
 ```shell
-# 安装
-brew install alfred baidunetdisk charles cheatsheet dingtalk foxmail google-chrome iterm2 neteasemusic postman qq snipaste sublime-text switchhosts teamviewer typora visual-studio-code wechat wechatwebdevtools wechatwork youdaonote
-
-# 更新
-brew cu -a
-y
+brew install baidunetdisk charles cheatsheet clash-for-windows cursor dingtalk forklift google-chrome hbuilderx iterm2 maczip microsoft-remote-desktop neteasemusic pdfelement postman qq qqmusic snipaste switchhosts tencent-meeting visual-studio-code wechat wechatwebdevtools wechatwork
 ```
 
 > 如果你是 macOS High Sierra 用户，通过 brew 安装应用前你可能需要以下操作。
@@ -116,69 +128,53 @@ sudo mkdir /usr/local/Cellar && sudo mkdir /usr/local/opt && sudo mkdir /usr/loc
 sudo chown -R $(whoami) $(brew --prefix)/*
 ```
 
-### 一些推荐的 App Store
+#### 一些推荐的 App Store
 
-```text
+```
 # 免费
-Keynote、Numbers、Pages、RAR Extractor Lite、GIF Brewery 3、OhMyStar2、Yummy FTP Pro、iCopy、Xcode
+Xcode、Keynote、Numbers、Pages、GIF Brewery 3、OhMyStar2、Yummy FTP Pro、iCopy
 
 # 付费
 Cornerstone、Micrisift、Office、Zoom It、Final Cut Pro、Adobe Photoshop CC、Navicat、Premium、FileZilla、Sketch
 ```
 
-## 编辑器
+### 编辑器
 
-### Visual Studio Code
+#### Visual Studio Code
 
-#### 插件列表
+##### [Settings Sync]
 
-```text
-Atom One Dark Theme、Auto Import、Bracket Pair Colorizer、Chinese (Simplified) Language、Code Runner、Color Highlight、Color Info、CSS Peek、Debugger for Chrome、File Utils、Git History、Git History Diff、Git Project Manager、GitLens — Git supercharged、HTML CSS Support、indent-rainbow、IntelliSense for CSS class names in HTML、lit-html、Live Server、markdownlint、minapp、npm、npm Intellisense、open-in-browser、Prettier - Code formatter、Quokka.js、React Native Tools、shell-format、Snippetica for Markdown、SVG Viewer、TODO Highlight、Trailing Spaces、TSLint、TypeScript Hero、Vetur、Vetur-wepy、vscode-faker、vscode-pdf、vue-beautify、XML Tools
-```
+> https://code.visualstudio.com/docs/editor/settings-sync
 
-#### 配置
+### git
 
-```json
-# settings.json
-
-{
-  "files.associations": {
-    "*.wpy": "vue",
-    "*.wxml": "html",
-    "*.wxs": "javascript",
-    "*.vue": "vue",
-    "*.wxss": "css",
-    "*.cjson": "jsonc"
-  },
-  "emmet.includeLanguages": {
-    "wxml": "html"
-  },
-  "minapp-vscode.disableAutoConfig": true,
-  "workbench.startupEditor": "newUntitledFile",
-  "editor.formatOnSave": true,
-  "vetur.format.defaultFormatter.html": "js-beautify-html",
-}
-```
-
-## git
-
-### ssh
+#### ssh
 
 > 你可能需要执行 `xcode-select --install`。
 
-#### github 与 gitlab 共同生效
+##### github 与 gitlab 共同生效
 
 ```shell
 ssh-keygen -t rsa -C 'you@example.com'
+```
 
+```shell
 cat ~/.ssh/id_rsa.pub
+```
+
+```
+github/gitlab 添加相应密钥
 ```
 
 ```shell
 ssh-keygen -t rsa -C 'you@example.com'
+```
 
+```shell
 id_rsa_*
+```
 
+```shell
 cat ~/.ssh/id_rsa_*.pub
 ```
 
@@ -186,7 +182,7 @@ cat ~/.ssh/id_rsa_*.pub
 vim ~/.ssh/config
 ```
 
-```text
+```
 # github
   Host github.com
     HostName github.com
@@ -200,17 +196,13 @@ vim ~/.ssh/config
     IdentityFile ~/.ssh/id_rsa_*
 ```
 
+##### 连接测试
 ```shell
 ssh -T git@github.com
-
-yes
-
-ssh -T git@gitlab.*.com
-
 yes
 ```
 
-### Access token
+#### Access token
 
 > 如果不通过 ssh 连接，这是一个可选方案。
 
@@ -218,73 +210,82 @@ yes
 git clone https://<username>:<private-token>@myrepo.git
 ```
 
-### 默认设置
+#### 默认设置
+
+##### 全局配置
 
 ```shell
-# 全局配置
+git config --global user.name 'your name'
+```
 
-git config --global user.name 'Your Name'
-
+```shell
 git config --global user.email 'you@example.com'
+```
 
-# 局部配置
+##### 局部配置
 
-git config user.name 'Your Name'
+```shell
+git config user.name 'your name'
+```
 
+```shell
 git config user.email 'you@example.com'
 ```
 
-## svn
+### svn
 
-### svn 命令行
+#### svn 命令行
 
 ```shell
 mkdir /Users/username/Public/svn && cd /Users/username/Public/svn
+```
 
+```shell
 svnadmin create code
+```
 
+```shell
 cd code/conf && vim svnserve.conf
 ```
 
-- 取消下列配置项注释
-
-```text
+```
+# 取消下列配置项注释
 anon-access = read
 auth-access = write
 password-db = passwd
 authz-db = authz
 ```
 
-- 添加账户与密码
+#### 添加账户与密码
 
 ```shell
 vim passwd
 ```
 
-```text
+```
 [users]
 account=password
 ```
 
-- 设置权限
+##### 设置权限
 
 ```shell
 vim authz
 ```
 
-```text
+```
 [groups]
 groups = account
 @group = rw
 ```
 
-- 启动
+##### 启动
 
 ```shell
 svnserve -d -r /Users/username/Public/svn
 ```
 
-- checkout
+##### checkout
 
 > 将服务器中 code 仓库的代码 checkout 到本地当前目录下。
 
@@ -292,15 +293,15 @@ svnserve -d -r /Users/username/Public/svn
 svn checkout svn://localhost/code
 ```
 
-- 全局忽略文件
+##### 全局忽略文件
 
 ```shell
 vim ~/.subversion/config
 ```
 
-- 取消 global-ignores 行注释并追加以下可选项
+##### 取消 global-ignores 行注释并追加以下可选项
 
-```text
+```
 .DS_Store
 node_modules
 dist
@@ -317,33 +318,35 @@ yarn-error.log*
 *.sln
 ```
 
-## nvm node npm
+### nvm node npm
 
-### nvm
+#### nvm
 
 ```shell
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 ```
 
-### node
+#### node
 
 ```shell
 nvm ls-remote
+```
 
+```shell
 nvm install x.x.x
 ```
 
-```shell
-# 设置默认版本
+##### 设置默认版本
 
+```shell
 nvm alias default x.x.x
 ```
 
-### npm
+#### npm
+
+##### npm 登录
 
 ```shell
-# npm 登录
-
 npm login
 
 username
@@ -355,8 +358,9 @@ you@example.com
 npm whoami
 ```
 
+##### npm 配置
+
 ```shell
-# npm 配置
 
 npm set init-author-name 'author name'
 
@@ -367,55 +371,33 @@ npm set init-license 'MIT'
 npm config list
 ```
 
+###### 使用 nrm 管理源
+
 ```shell
-# 使用 nrm 管理源
 
 npm install -g nrm
 
 nrm ls
 ```
 
+###### 使用 cnpm 与 tyarn
+
 ```shell
-# 使用 cnpm 与 tyarn
 
 npm install -g cnpm
 
 yarn global add tyarn
 ```
 
-```shell
-# 一些全局模块
+###### 一些全局模块
 
-npm install -g @vue/cli rollup
+```
+rollup vite vue-cli create-react-app ant-design-pro taro
 ```
 
-```shell
-# @vue/cli
+### rvm ruby jekyll
 
-vue create my-app
-```
-
-```shell
-# create-react-app
-
-npx create-react-app my-app
-```
-
-```shell
-# ant-design-pro
-
-yarn create umi  # or npm create um
-
-# Choose ant-design-pro
-
-npm install
-
-npm start
-```
-
-## rvm ruby jekyll
-
-### rvm
+#### rvm
 
 > 你可能需要先安装 GnuPG。`$ brew install gnupg gnupg2`。
 
@@ -427,7 +409,7 @@ gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB8
 source /Users/username/.rvm/scripts/rvm
 ```
 
-### ruby
+#### ruby
 
 ```shell
 rvm list known
@@ -435,7 +417,7 @@ rvm list known
 rvm install x.x.x
 ```
 
-### jekyll 安装
+#### jekyll 安装
 
 > 使用 jekyll 来生成你的静态博客。
 
@@ -443,9 +425,9 @@ rvm install x.x.x
 gem install jekyll
 ```
 
-## pyenv python
+### pyenv python
 
-### pyenv
+#### pyenv
 
 ```shell
 brew install pyenv
@@ -455,7 +437,7 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 source ~/.bash_profile
 ```
 
-### python
+#### python
 
 ```shell
 pyenv install --list
