@@ -114,7 +114,7 @@ curl cip.cc
 ```
 
 ```shell
-brew install nginx mysql yarn gnupg gnupg2
+brew install nginx mysql yarn
 ```
 
 ```shell
@@ -236,16 +236,22 @@ git config user.email 'you@example.com'
 
 #### svn 命令行
 
+> 你可能需要先安装 svn。`$ brew install svn`。
+
+#### 创建运行空间
+
 ```shell
-mkdir /Users/username/Public/svn && cd /Users/username/Public/svn
+mkdir /Users/username/example && cd /Users/username/example
 ```
 
 ```shell
-svnadmin create code
+svnadmin create subversion
 ```
 
+#### 配置
+
 ```shell
-cd code/conf && vim svnserve.conf
+cd subversion/conf && vim svnserve.conf
 ```
 
 ```
@@ -264,7 +270,7 @@ vim passwd
 
 ```
 [users]
-account=password
+youraccount=yourpassword
 ```
 
 ##### 设置权限
@@ -275,14 +281,14 @@ vim authz
 
 ```
 [groups]
-groups = account
+groups = youraccount
 @group = rw
 ```
 
 ##### 启动
 
 ```shell
-svnserve -d -r /Users/username/Public/svn
+svnserve -d -r /Users/username/example
 ```
 
 ##### checkout
@@ -290,7 +296,13 @@ svnserve -d -r /Users/username/Public/svn
 > 将服务器中 code 仓库的代码 checkout 到本地当前目录下。
 
 ```shell
-svn checkout svn://localhost/code
+svn checkout <repository_url>
+```
+
+or
+
+```shell
+svn checkout <repository_url> <local_folder_name>
 ```
 
 ##### 全局忽略文件
